@@ -36,6 +36,11 @@ namespace BusinessLogicLayer.Services
                 throw new ArgumentException("Entry date is required");
             }
 
+            if (journalEntry.EntryDate.Date > DateTime.Now.Date)
+            {
+                throw new ArgumentException("Entry date cannot be in the future");
+            }
+
             if (string.IsNullOrWhiteSpace(journalEntry.Description))
             {
                 throw new ArgumentException("Description is required");
@@ -44,6 +49,11 @@ namespace BusinessLogicLayer.Services
             if (journalEntry.Details == null || !journalEntry.Details.Any())
             {
                 throw new ArgumentException("At least one journal entry detail is required");
+            }
+
+            if (journalEntry.Details.Count > 5)
+            {
+                throw new ArgumentException("Journal entry cannot have more than 5 details");
             }
 
             foreach (var detail in journalEntry.Details)

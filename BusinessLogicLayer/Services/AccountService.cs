@@ -1,15 +1,4 @@
-﻿using AutoMapper;
-using BusinessLogicLayer.DTOs.AccountDTOs;
-using BusinessLogicLayer.DTOs.ResponseDTOs;
-using BusinessLogicLayer.IServices;
-using DataAccessLayer.UnitOfWorks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BusinessLogicLayer.Services
+﻿namespace BusinessLogicLayer.Services
 {
     public class AccountService : IAccountService
     {

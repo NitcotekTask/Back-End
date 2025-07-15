@@ -1,8 +1,4 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-
 namespace DataAccessLayer.Entities;
 
 public partial class NitcotekContext : DbContext

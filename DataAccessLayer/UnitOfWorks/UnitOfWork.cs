@@ -1,12 +1,4 @@
-﻿using DataAccessLayer.Entities;
-using DataAccessLayer.IRepos;
-using DataAccessLayer.Repos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace DataAccessLayer.UnitOfWorks
 {
     public class UnitOfWork : IUnitOfWork

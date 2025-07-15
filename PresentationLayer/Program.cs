@@ -1,14 +1,3 @@
-
-using BusinessLogicLayer.MappingConfig;
-using BusinessLogicLayer.Services;
-using BusinessLogicLayer.IServices;
-using DataAccessLayer.Entities;
-using DataAccessLayer.IRepos;
-using DataAccessLayer.Repos;
-using DataAccessLayer.UnitOfWorks;
-using Microsoft.EntityFrameworkCore;
-
-
 namespace PresentationLayer
 {
     public class Program

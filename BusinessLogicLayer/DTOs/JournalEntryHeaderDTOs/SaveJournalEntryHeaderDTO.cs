@@ -1,11 +1,4 @@
-﻿using BusinessLogicLayer.DTOs.JournalEntryDetailsDTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BusinessLogicLayer.DTOs.JournalEntryHeaderDTOs
+﻿namespace BusinessLogicLayer.DTOs.JournalEntryHeaderDTOs
 {
     public class SaveJournalEntryHeaderDTO
     {

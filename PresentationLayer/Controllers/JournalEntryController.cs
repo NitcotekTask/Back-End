@@ -1,10 +1,4 @@
-﻿using BusinessLogicLayer.DTOs.JournalEntryHeaderDTOs;
-using BusinessLogicLayer.DTOs.ResponseDTOs;
-using BusinessLogicLayer.IServices;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
-namespace PresentationLayer.Controllers
+﻿namespace PresentationLayer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

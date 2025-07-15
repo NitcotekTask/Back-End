@@ -1,6 +1,11 @@
 
+using BusinessLogicLayer.MappingConfig;
 using DataAccessLayer.Entities;
+using DataAccessLayer.IRepos;
+using DataAccessLayer.Repos;
+using DataAccessLayer.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace PresentationLayer
 {
@@ -17,6 +22,7 @@ namespace PresentationLayer
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
             builder.Services.AddDbContext<NitcotekContext>( op => op.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddAutoMapper(config => config.AddProfile<MappingProfile>());
 
             builder.Services.AddCors( op =>
             {
@@ -29,6 +35,26 @@ namespace PresentationLayer
                     }
                 );
             });
+
+
+            #region General Services Registration:
+
+            builder.Services.AddScoped(typeof(IGenericRepo<>), typeof(GenericRepo<>));
+
+            #endregion
+
+            #region Unit Of Work Registration:
+
+             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            #endregion
+
+            #region Business Services Registration:
+
+
+
+            #endregion
+
 
             var app = builder.Build();
 

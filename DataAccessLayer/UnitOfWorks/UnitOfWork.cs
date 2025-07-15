@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.UnitOfWorks
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly NitcotekContext _db;
         public UnitOfWork(NitcotekContext db)

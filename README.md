@@ -1,7 +1,7 @@
 In this project:
 
 - I used the 3 layered-archticture: BusinesLogicLayer - Presentation Layer - Data Acess Layer for decoupling and maintainability/testability
-- I used Design patterns like: Repositories - UnitOfWork - Dependency Injection
+- I used Design patterns like: Repositories "For Maintainability And Testability and extensability" - UnitOfWork "For Sharing Only one DbContext and reducing Repos Registration" - Dependency Injection "For Applying Inversion Of Control".
 - I used tools like : EF Core - Lazy Loading Proxies - AutoMapper - SwaggerUI that uses OpenAPI Documentation v1
 - Enabled CORS for AJAX Calls
 - I paid attention to be using SOLID Prinicpals and clean code across all the project

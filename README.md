@@ -1,13 +1,20 @@
 In this project:
 
-- I used the 3 layered-archticture: BusinesLogicLayer - Presentation Layer - Data Acess Layer for decoupling and maintainability/testability
-- I used Design patterns like: Repositories "For Maintainability And Testability and extensability" - UnitOfWork "For Sharing Only one DbContext and reducing Repos Registration" - Dependency Injection "For Applying Inversion Of Control".
-- I used tools like : EF Core - Lazy Loading Proxies - AutoMapper - SwaggerUI that uses OpenAPI Documentation v1
-- Enabled CORS for AJAX Calls
-- I paid attention to be using SOLID Prinicpals and clean code across all the project
-- I added validation throw all end points according to business rules & made exceptions handling in the controller
-- Response DTO to ensure stability in response to the client side
-- Used DTOs for all end points to ensure clean data sending to the client
-- Used Async Operations To Ensure non blocking method calling and safe release of threads to thread pool so server can serve more requests, and for logic that needs concurrency
-- There was no need to use IQueryable as there was no filtering happens on data.
-- ConnectionString is found in appsettings.json
+- I followed a **3-layered architecture**: Presentation Layer, Business Logic Layer, and Data Access Layer — to ensure decoupling, maintainability, and testability.
+- I applied design patterns including:
+  - **Repository** – for maintainability, testability, and extensibility.
+  - **Unit of Work** – to share a single `DbContext` instance and minimize repository registration.
+  - **Dependency Injection** – to enforce the Inversion of Control (IoC) principle.
+- I used tools and libraries such as:
+  - **Entity Framework Core**
+  - **Lazy Loading Proxies**
+  - **AutoMapper**
+  - **Swagger UI** (based on OpenAPI Specification v1).
+- Enabled **CORS** to allow secure AJAX calls from the frontend.
+- Focused on applying **SOLID principles** and **clean code** practices across all layers.
+- Implemented **validation** based on business rules for all endpoints, with proper **exception handling** in controllers.
+- Used a consistent **ResponseDTO** structure to ensure stability and predictability in client responses.
+- Used **DTOs** across all endpoints to separate internal models from exposed data and prevent over-posting.
+- Implemented **async operations** to ensure non-blocking I/O, better thread pool usage, and improved scalability.
+- Avoided using `IQueryable` as no filtering was required in the project scope.
+- The database connection string is stored in `appsettings.json`.

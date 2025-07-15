@@ -50,6 +50,11 @@ public partial class NitcotekContext : DbContext
         modelBuilder.Entity<JournalEntryHeader>(entity =>
         {
             entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+            entity.HasIndex(e => e.EntryNumber)
+               .IsUnique()
+               .HasDatabaseName("UQ_JournalEntryHeader_EntryNumber");
+
         });
 
         OnModelCreatingPartial(modelBuilder);

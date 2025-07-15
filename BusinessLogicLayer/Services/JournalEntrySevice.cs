@@ -67,6 +67,15 @@ namespace BusinessLogicLayer.Services
                 throw new InvalidOperationException("Total debit must equal total credit for a journal entry");
             }
 
+            if (journalEntry.EntryNumber.HasValue)
+            {
+                var existingEntry = await _unitOfWork.JournalEntryHeaderRepo.GetAllAsync();
+                if (existingEntry.Any(j => j.EntryNumber == journalEntry.EntryNumber))
+                {
+                    throw new InvalidOperationException($"Journal entry with number {journalEntry.EntryNumber} already exists");
+                }
+            }
+
             var header = _mapper.Map<JournalEntryHeader>(journalEntry);
             await _unitOfWork.JournalEntryHeaderRepo.InsertAsync(header);
             await _unitOfWork.SaveAsync();

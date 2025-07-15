@@ -1,5 +1,7 @@
 In this project:
 
+**("I created the EntryNumber Column with UNIQUE Constraint, And added a surrogate key "id" as the the primary key of the table") --> As requested in the task that only EntryDate & EntryDescroption Are Required and the rest can be null !")**
+
 - I followed a **3-layered architecture**: Presentation Layer, Business Logic Layer, and Data Access Layer - to ensure decoupling, maintainability, and testability.
 - I applied design patterns including:
   - **Repository** – for maintainability, testability, and extensibility.

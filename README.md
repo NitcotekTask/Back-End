@@ -19,5 +19,6 @@ In this project:
 - Implemented **async operations** to ensure non-blocking I/O, better thread pool usage, and improved scalability.
 - Used **Database-First approach** to scaffold entities directly from the existing SQL Server schema.
 - Avoided using `IQueryable` as no filtering was required in the project scope.
-- - Used **EF Core Database-First approach** to scaffold entities directly from the existing SQL Server schema.
+- Used **EF Core Database-First approach** to scaffold entities directly from the existing SQL Server schema.
+- Made A Global Using On Each Layer to Prevent Redundent Using Statments In Each File.
 - A **SQL Server database backup (.bak)** is included in the **Data Access Layer (DAL)** for convenience.

@@ -1,5 +1,7 @@
 
 using BusinessLogicLayer.MappingConfig;
+using BusinessLogicLayer.Services;
+using BusinessLogicLayer.IServices;
 using DataAccessLayer.Entities;
 using DataAccessLayer.IRepos;
 using DataAccessLayer.Repos;
@@ -51,6 +53,7 @@ namespace PresentationLayer
 
             #region Business Services Registration:
 
+            builder.Services.AddScoped<IAccountService, AccountService>();
 
 
             #endregion

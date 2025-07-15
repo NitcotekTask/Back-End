@@ -32,10 +32,5 @@ namespace DataAccessLayer.Repos
             await dbSet.AddAsync(entity);
         }
 
-        public void Delete(T entity)
-        {
-            dbSet.Remove(entity);
-        }
-
     }
 }

@@ -54,7 +54,7 @@ namespace PresentationLayer
             #region Business Services Registration:
 
             builder.Services.AddScoped<IAccountService, AccountService>();
-
+            builder.Services.AddScoped<IJournalEntryService, JournalEntrySevice>();
 
             #endregion
 

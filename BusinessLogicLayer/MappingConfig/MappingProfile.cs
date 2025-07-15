@@ -18,8 +18,14 @@ namespace BusinessLogicLayer.MappingConfig
         {
 
             CreateMap<AccountsChart, DisplayAccontDTO>().ReverseMap();
-            CreateMap<SaveJournalEntryDetailsDTO , JournalEntryDetail>().ReverseMap();
-            CreateMap<SaveJournalEntryHeaderDTO, JournalEntryHeader>().ReverseMap();
+            CreateMap<SaveJournalEntryDetailsDTO, JournalEntryDetail>().ReverseMap();
+            CreateMap<SaveJournalEntryHeaderDTO, JournalEntryHeader>()
+            .ForMember(dest => dest.JournalEntryDetails, opt => opt.Ignore())
+            .AfterMap((src, dest) =>
+            {
+                dest.CreatedAt = DateTime.UtcNow;
+            })
+            .ReverseMap();
 
         }
 

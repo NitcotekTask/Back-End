@@ -36,7 +36,7 @@ public partial class NitcotekContext : DbContext
 
         modelBuilder.Entity<JournalEntryDetail>(entity =>
         {
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
             entity.HasOne(d => d.Account).WithMany(p => p.JournalEntryDetails)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -49,7 +49,7 @@ public partial class NitcotekContext : DbContext
 
         modelBuilder.Entity<JournalEntryHeader>(entity =>
         {
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
         });
 
         OnModelCreatingPartial(modelBuilder);
